@@ -561,13 +561,13 @@
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
-		<Reference Include="CrtCustomer360AI">
-			<HintPath>$(RelativePkgFolderPath)/CrtCustomer360AI/$(StandalonePackageAssemblyPath)/CrtCustomer360AI.dll</HintPath>
+		<Reference Include="CrtC360InUiV2">
+			<HintPath>$(RelativePkgFolderPath)/CrtC360InUiV2/$(StandalonePackageAssemblyPath)/CrtC360InUiV2.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
-		<Reference Include="CrtC360InUiV2">
-			<HintPath>$(RelativePkgFolderPath)/CrtC360InUiV2/$(StandalonePackageAssemblyPath)/CrtC360InUiV2.dll</HintPath>
+		<Reference Include="CrtCustomer360AI">
+			<HintPath>$(RelativePkgFolderPath)/CrtCustomer360AI/$(StandalonePackageAssemblyPath)/CrtCustomer360AI.dll</HintPath>
 			<SpecificVersion>False</SpecificVersion>
 			<Private>False</Private>
 		</Reference>
