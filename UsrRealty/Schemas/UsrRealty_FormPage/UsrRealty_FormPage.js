@@ -51,6 +51,27 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
+				"name": "PushMeButton",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(PushMeButton_caption)#",
+					"color": "accent",
+					"disabled": false,
+					"size": "large",
+					"iconPosition": "left-icon",
+					"visible": true,
+					"icon": "checkmark-icon",
+					"clicked": {
+						"request": "nur.PushButtonRequest"
+					},
+					"clickMode": "default"
+				},
+				"parentName": "CardToggleContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
 				"name": "UsrName",
 				"values": {
 					"layoutConfig": {
@@ -108,6 +129,29 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
+				"name": "CommisionUSD",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 4,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.PDS_UsrCommisionUSD_hyn5gk0",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrCommisionUSD_hyn5gk0",
+					"visible": true,
+					"readonly": true,
+					"placeholder": "",
+					"tooltip": ""
+				},
+				"parentName": "SideAreaProfileContainer",
+				"propertyName": "items",
+				"index": 3
+			},
+			{
+				"operation": "insert",
 				"name": "Type",
 				"values": {
 					"layoutConfig": {
@@ -162,7 +206,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					},
 					"type": "crt.ComboBox",
 					"label": "$Resources.Strings.PDS_UsrOfferType_5o95x1j",
-					"labelPosition": "auto",
+					"labelPosition": "above",
 					"control": "$PDS_UsrOfferType_5o95x1j",
 					"listActions": [],
 					"showValueAsLink": true,
@@ -209,7 +253,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"labelPosition": "above",
 					"control": "$PDS_UsrComment_yawcwem",
 					"multiline": false,
-					"visible": true,
+					"visible": false,
 					"readonly": false,
 					"placeholder": "",
 					"tooltip": ""
@@ -230,7 +274,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					},
 					"type": "crt.ComboBox",
 					"label": "$Resources.Strings.PDS_UsrManager_nw9t7j4",
-					"labelPosition": "auto",
+					"labelPosition": "above",
 					"control": "$PDS_UsrManager_nw9t7j4",
 					"listActions": [],
 					"showValueAsLink": true,
@@ -264,7 +308,53 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
-				"name": "RealtyNumber",
+				"name": "RealtyCountry",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 3,
+						"rowSpan": 1
+					},
+					"type": "crt.ComboBox",
+					"label": "$Resources.Strings.PDS_UsrRealtyCountry_r1oa36q",
+					"labelPosition": "above",
+					"control": "$PDS_UsrRealtyCountry_r1oa36q",
+					"listActions": [],
+					"showValueAsLink": true,
+					"controlActions": [],
+					"visible": null,
+					"readonly": false,
+					"placeholder": null,
+					"tooltip": null,
+					"valueDetails": null,
+					"isSimpleLookup": null,
+					"secondaryDisplayValue": null
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 4
+			},
+			{
+				"operation": "insert",
+				"name": "ListAction_93dsnir",
+				"values": {
+					"code": "addRecord",
+					"type": "crt.ComboboxSearchTextAction",
+					"icon": "combobox-add-new",
+					"caption": "ComboBox.AddNewRecord",
+					"clicked": {
+						"request": "crt.CreateRecordFromLookupRequest",
+						"params": {}
+					}
+				},
+				"parentName": "RealtyCountry",
+				"propertyName": "listActions",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "RealtyCity",
 				"values": {
 					"layoutConfig": {
 						"column": 2,
@@ -272,9 +362,36 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 						"row": 3,
 						"rowSpan": 1
 					},
+					"type": "crt.ComboBox",
+					"label": "$Resources.Strings.PDS_UsrRealtyCity_0ziij5f",
+					"labelPosition": "above",
+					"control": "$PDS_UsrRealtyCity_0ziij5f",
+					"listActions": [],
+					"showValueAsLink": true,
+					"controlActions": [],
+					"visible": true,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": "",
+					"valueDetails": null
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 5
+			},
+			{
+				"operation": "insert",
+				"name": "RealtyNumber",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 4,
+						"rowSpan": 1
+					},
 					"type": "crt.Input",
 					"label": "$Resources.Strings.PDS_UsrNumber_kswig1p",
-					"labelPosition": "auto",
+					"labelPosition": "above",
 					"control": "$PDS_UsrNumber_kswig1p",
 					"multiline": false,
 					"visible": true,
@@ -284,7 +401,30 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
-				"index": 4
+				"index": 6
+			},
+			{
+				"operation": "insert",
+				"name": "OfferTypeCommisionPercent",
+				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 4,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "#ResourceString(OfferTypeCommisionPercent_label)#",
+					"control": "$PDS_UsrOfferTypeUsrCommision_ins5tdx",
+					"readonly": true,
+					"placeholder": "",
+					"labelPosition": "above",
+					"tooltip": "",
+					"visible": true
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 7
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
@@ -333,6 +473,31 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 						"modelConfig": {
 							"path": "PDS.UsrOfferType"
 						}
+					},
+					"PDS_UsrRealtyCountry_r1oa36q": {
+						"modelConfig": {
+							"path": "PDS.UsrRealtyCountry"
+						}
+					},
+					"PDS_UsrRealtyCity_0ziij5f": {
+						"modelConfig": {
+							"path": "PDS.UsrRealtyCity"
+						}
+					},
+					"PDS_UsrCommisionUSD_hyn5gk0": {
+						"modelConfig": {
+							"path": "PDS.UsrCommisionUSD"
+						}
+					},
+					"PDS_UsrOfferTypeUsrCommision_i9vq70n": {
+						"modelConfig": {
+							"path": "PDS.UsrOfferTypeUsrCommision_i9vq70n"
+						}
+					},
+					"PDS_UsrOfferTypeUsrCommision_ins5tdx": {
+						"modelConfig": {
+							"path": "PDS.UsrOfferTypeUsrCommision_ins5tdx"
+						}
 					}
 				}
 			},
@@ -365,14 +530,53 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"PDS": {
 						"type": "crt.EntityDataSource",
 						"config": {
-							"entitySchemaName": "UsrRealty"
+							"entitySchemaName": "UsrRealty",
+							"attributes": {
+								"UsrOfferTypeUsrCommision_i9vq70n": {
+									"path": "UsrOfferType.UsrCommision",
+									"type": "ForwardReference"
+								},
+								"UsrOfferTypeUsrCommision_ins5tdx": {
+									"path": "UsrOfferType.UsrCommision",
+									"type": "ForwardReference"
+								}
+							}
 						},
 						"scope": "page"
 					}
 				}
 			}
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
-		handlers: /**SCHEMA_HANDLERS*/[]/**SCHEMA_HANDLERS*/,
+		handlers: /**SCHEMA_HANDLERS*/[
+			{
+				request: "nur.PushButtonRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+					console.log("Button works...");
+					Terrasoft.showInformation("My button was pressed.");
+					var price = await request.$context.PDS_UsrPrice_hytadga;
+					console.log("Price = " + price);
+					request.$context.PDS_UsrArea_2woxtju = price * 0.2;
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
+			},
+			{
+				request: "crt.HandleViewModelAttributeChangeRequest",
+				/* The custom implementation of the system query handler. */
+				handler: async (request, next) => {
+      					if (request.attributeName === 'PDS_UsrPrice_hytadga' || 				             // if price changed
+					   request.attributeName === 'PDS_UsrOfferTypeUsrCommision_ins5tdx' ) { 		// or percent changed
+						var price = await request.$context.PDS_UsrPrice_hytadga;
+						var percent = await request.$context.PDS_UsrOfferTypeUsrCommision_ins5tdx;
+						var commission = price * percent / 100;
+						request.$context.PDS_UsrCommisionUSD_hyn5gk0 = commission;
+					}
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
+			}
+		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
 		validators: /**SCHEMA_VALIDATORS*/{}/**SCHEMA_VALIDATORS*/
 	};
